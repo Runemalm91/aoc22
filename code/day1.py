@@ -16,13 +16,11 @@ def get_calories_per_elf():
     return calories_per_elf
 
 
-def part_one():
-    calories_per_elf = get_calories_per_elf()
+def part_one(calories_per_elf):
     print(f"Part 1: Max number of calories {max(calories_per_elf)}")
 
 
-def part_two():
-    calories_per_elf = get_calories_per_elf()
+def part_two(calories_per_elf):
     calories_per_elf.sort(reverse=True)
     print(
         f"Part 2: Total number of calories carried by top 3 elves: {sum(calories_per_elf[0:3])}"
@@ -30,8 +28,9 @@ def part_two():
 
 
 def main():
-    part_one()
-    part_two()
+    calories_per_elf = get_calories_per_elf()
+    part_one(calories_per_elf)
+    part_two(calories_per_elf)
 
 
 if __name__ == "__main__":
